@@ -5,7 +5,9 @@ const LieuSchema = new mongoose.Schema({
   city: String,
   lat: Number,
   lng: Number,
-  artist: String
+  artist: String,
+  description: String,
+  image: String,
 });
 
 export default mongoose.model("Lieu", LieuSchema);
