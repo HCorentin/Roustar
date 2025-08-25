@@ -1,19 +1,18 @@
 import express from "express";
-import Lieu from "../models/Lieu.js";
+import {
+  getLieux,
+  getLieuById,
+  createLieu,
+  updateLieu,
+  deleteLieu,
+} from "../controllers/lieuxController.js";
 
 const router = express.Router();
 
-// GET tous les lieux
-router.get("/", async (req, res) => {
-  const lieux = await Lieu.find();
-  res.json(lieux);
-});
-
-// POST nouveau lieu
-router.post("/", async (req, res) => {
-  const nouveauLieu = new Lieu(req.body);
-  await nouveauLieu.save();
-  res.json(nouveauLieu);
-});
+router.get("/", getLieux);
+router.get("/:id", getLieuById);
+router.post("/", createLieu);
+router.put("/:id", updateLieu);
+router.delete("/:id", deleteLieu);
 
 export default router;

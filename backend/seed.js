@@ -1,11 +1,9 @@
-import mongoose from 'mongoose';
-import 'dotenv/config';
+import dotenv from 'dotenv';
+import connectDB from './config/db.js';
 import Lieu from './models/Lieu.js';
 
-// Connecte MongoDB
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log("✅ Connecté à MongoDB"))
-  .catch(err => console.error("❌ Erreur MongoDB :", err));
+dotenv.config();
+await connectDB();
 
 const lieux = [
   { name: "Sifters Records", city: "Manchester", lat: 53.42138112101502, lng: -2.216884375490097, artist: "Oasis", description: "'Mister Sifters sold me songs when I was just sixteen, now he stops at traffic lights, but only when they're green.'", image: "/images/siftersrecords.jpg" },
@@ -13,15 +11,16 @@ const lieux = [
     { name: "Bonehead's house", city: "Manchester", lat: 53.42496985045789, lng: -2.2438099194437364, artist: "Oasis", description: "Where the iconic cover of Definitely Maybe album was shot.", image: "/images/DM.jpg" },
 ];
 
-async function seedDB() {
+const importData = async () => {
   try {
-    await Lieu.deleteMany({ artist: "Oasis" });
+    await Lieu.deleteMany();
     await Lieu.insertMany(lieux);
-    console.log("✅ Lieux Oasis insérés !");
-    mongoose.connection.close();
+    console.log("✅ Données importées ");
+    process.exit();
   } catch (err) {
     console.error(err);
+    process.exit(1);
   }
 }
 
-seedDB();
+importData();

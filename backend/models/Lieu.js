@@ -1,11 +1,11 @@
 import mongoose from "mongoose";
 
 const LieuSchema = new mongoose.Schema({
-  name: String,
+  name: { type: String, required: true },
   city: String,
-  lat: Number,
-  lng: Number,
-  artist: String,
+  lat: { type: Number, required: true },
+  lng: { type: Number, required: true },
+  artist: { type: String, required: true },
   description: String,
   image: String,
 });

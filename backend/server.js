@@ -1,29 +1,19 @@
 import express from "express";
 import cors from "cors";
-import mongoose from 'mongoose';
-import 'dotenv/config';
-import Lieu from "./models/Lieu.js";
+import dotenv from "dotenv";
+import connectDB from "./config/db.js";
+import lieuxRoutes from "./routes/lieux.js";
 
+dotenv.config();
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Connexion à MongoDB
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log("✅ Connecté à MongoDB"))
-  .catch(err => console.error("❌ Erreur MongoDB :", err));
+connectDB();
 
-app.get("/api/lieux", async (req, res) => {
-  try {
-    const lieux = await Lieu.find({ artist: "Oasis" });
-    res.json(lieux);
-  } catch (err) {
-    res.status(500).json({ error: "Erreur serveur" });
-  }
-});
+app.use('/api/lieux', lieuxRoutes);
 
-// ➡️ Démarrage serveur
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`✅ Backend running on http://localhost:${PORT}`);
+  console.log(`✅ Server running on http://localhost:${PORT}`);
 });
