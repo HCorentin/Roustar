@@ -1,13 +1,15 @@
+import "./PlaceCard.css";
+
 export default function ListeLieux({ lieux }) {
   return (
-    <ul>
+    <div className="place-grid">
       {lieux.map((lieu) => (
-        <li key={lieu._id}>
-          <h3>{lieu.name}</h3>
-          <p>{lieu.description}</p> 
-          <img src={lieu.image} alt={lieu.name} style={{ width: '800px' }} />
-        </li>
+        <div className="place-card" key={lieu._id}>
+          <img src={lieu.image} alt={lieu.name} className="place-image"/>
+          <h3 className="place-name">{lieu.name}</h3>
+          <p className="place-description">{lieu.description}</p> 
+        </div>
       ))}
-    </ul>
+    </div>
   );
 }

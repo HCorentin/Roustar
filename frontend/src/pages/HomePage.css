@@ -1,0 +1,17 @@
+.home-grid {
+  justify-content: center;
+  padding: 20px;
+}
+
+.home-title {
+  margin-bottom: 40px;
+  margin-top: 0;
+}
+
+.home-header {
+    margin-bottom: 60px;
+}
+
+.home-header p {
+    font-size: 1.2rem;
+}

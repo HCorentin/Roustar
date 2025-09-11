@@ -19,8 +19,8 @@ export default function TourPage() {
     <div>
       <h1>{displayArtist} Tour</h1>
       <div>
-        <ListeLieux lieux={lieux} />
         <Carte lieux={lieux} />
+        <ListeLieux lieux={lieux} />
       </div>
     </div>
   )

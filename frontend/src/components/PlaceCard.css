@@ -1,0 +1,38 @@
+.place-card {
+  width: 70%;
+  background-color: #fff;
+  color: #000;
+  border-radius: 2px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 15px;
+  margin: 20px 20px 60px 20px;
+}
+
+.place-image {
+  width: 670px;
+  padding: 30px 20px 0 20px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.place-name {
+  font-size: 1.2rem;
+  margin: 10px 0 5px 0;
+}
+
+.place-description {
+  font-size: 0.85rem;
+  color: #555;
+  padding: 0 10px;
+}
+
+.place-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 60px;
+    margin-top: 60px;
+}
+
