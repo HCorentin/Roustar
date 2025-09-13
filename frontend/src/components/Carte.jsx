@@ -20,8 +20,10 @@ export default function Carte({ lieux }) {
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       {lieux.map((lieu) => (
         <Marker key={lieu._id} position={[lieu.lat, lieu.lng]}>
-          <Popup>
+          <Popup maxWidth={300}>
+            <img src={lieu.image} alt={lieu.name} className="place-image-popup"/>
             <strong>{lieu.name}</strong><br />
+            <p>{lieu.description}</p> 
             {lieu.city}
           </Popup>
         </Marker>

@@ -1,4 +1,6 @@
+import { useState } from "react";
 import ArtistCard from "../components/ArtistCard.jsx";
+import SearchBar from "../components/SearchBar.jsx";
 import "./HomePage.css";
 
 const artists = [
@@ -17,16 +19,26 @@ const artists = [
 ];
 
 export default function HomePage() {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const filteredArtists = artists.filter(artist =>
+    artist.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+
   return (
     <div className="home-grid">
       <div className="home-header">
         <h1 className="home-title">Bienvenue sur le guide du Roustar 🎸</h1>
         <p>Choisissez un artiste et explorez ses lieux emblématiques:</p>
       </div>
+
+      <SearchBar value={searchTerm} onChange={setSearchTerm} />
+
       <div className="artist-grid">
-        {artists.map((artist) => (
+        {filteredArtists.length > 0 ? filteredArtists.map((artist) => (
           <ArtistCard key={artist.id} artist={artist} />
-        ))}
+        )) :  (<p>Aucun artiste trouvé.</p>)} 
       </div>
     </div>
   )
