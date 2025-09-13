@@ -41,6 +41,7 @@
   justify-content: center;
   gap: 60px;
   margin-top: 60px;
+  min-height: 435px;
 }
 
 .lieu-description {

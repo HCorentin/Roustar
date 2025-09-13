@@ -37,7 +37,7 @@ export default function HomePage() {
 
       <div className="artist-grid">
         {filteredArtists.length > 0 ? filteredArtists.map((artist) => (
-          <ArtistCard key={artist.id} artist={artist} />
+          <ArtistCard key={artist.name} artist={artist} />
         )) :  (<p>Aucun artiste trouvé.</p>)} 
       </div>
     </div>

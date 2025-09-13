@@ -12,9 +12,11 @@ export default function TourPage() {
 
   useEffect(() => {
     axios.get("http://localhost:5000/api/lieux")
-      .then(res => setLieux(res.data))
+      .then(res => {
+        const artistPlaces = res.data.filter(place => place.artist.toLowerCase() === artist.toLowerCase());
+        setLieux(artistPlaces);})
       .catch(err => console.error(err));
-  }, []);
+  }, [artist]);
 
   return (
     <div>
