@@ -1,15 +1,15 @@
 .home-grid {
   justify-content: center;
-  padding: 20px;
 }
 
 .home-title {
-  margin-bottom: 40px;
-  margin-top: 0;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .home-header {
-    margin-bottom: 30px;
+    margin-bottom: 1rem;
+    text-align: center;
 }
 
 .home-header p {

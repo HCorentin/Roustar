@@ -22,11 +22,14 @@ export default function TourPage() {
 
   return (
     <div className="tour-page">
-      <button onClick={() => navigate("/")}>← Retour</button>
-      <h1>{displayArtist} Tour</h1>
-      <button className="toggle-button" onClick={() => setView(view === "carte" ? "liste" : "carte")}>
-        {view === "carte" ? "Voir la liste" : "Voir la carte"}
-      </button>
+      <div className="tour-header">
+        <button onClick={() => navigate("/")}>← Retour</button>
+        <h1>{displayArtist} Tour</h1>
+        <button className="toggle-button" onClick={() => setView(view === "carte" ? "liste" : "carte")}>
+          {view === "carte" ? "Vue liste" : "Vue carte"}
+        </button>
+      </div>
+      
       <div className="view-container">
         {view === "carte" ? (
             <Carte lieux={lieux} />

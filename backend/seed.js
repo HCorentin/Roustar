@@ -13,6 +13,11 @@ const lieux = [
   { name: "Cavern Club", city: "Liverpool", lat: 53.40643946534472, lng: -2.987960637020384, artist: "The Beatles", description: "Le club où les Beatles ont donné de nombreux concerts au début de leur carrière et ont commencé à se faire connaître.", image: "/images/cavernclub.webp" },
   { name: "Penny Lane", city: "Liverpool", lat: 53.38684287557945, lng: -2.9193638239959556, artist: "The Beatles", description: "Rendue célèbre par la chanson 'Penny Lane', cette rue symbolise l'enfance et l'inspiration des Beatles.", image: "/images/pennylane.jpg" },
   { name: "Strawberry Field", city: "Liverpool", lat: 53.38051611525403, lng: -2.883224368723272, artist: "The Beatles", description: "L'orphelinat qui a inspiré la chanson 'Strawberry Fields Forever', lieu clé de l'enfance de John Lennon.", image: "/images/strawberry.jpg" },
+
+  { name: "The Jericho Tavern", city: "Oxford", lat: 51.76033607757395, lng: -1.2664609771201305, artist: "Radiohead", description: "Premier lieu où le groupe, alors appelé 'On a Friday', a joué ses premiers concerts. Pub emblématique de la scène indie d'Oxford.", image: "/images/jericho.jpg" },
+  { name: "Courtyard Studios", city: "Oxfordshire", lat: 51.641751602515626,  lng: -1.2791757920168494, artist: "Radiohead", description: "Studio où Radiohead a enregistré son premier single 'Creep' en 1992. Début de leur carrière mondiale.", image: "/images/courtyard.jpeg" },
+  { name: "Abbey Road Studios", city: "Londres", lat: 51.53233725091806, lng: -0.17788811792464634, artist: "Radiohead", description: "Studio mythique où Radiohead a travaillé sur 'The Bends'. Symbole de leur entrée dans la cour des grands.", image: "/images/abbeyrh.jpg" }
+
 ];
 
 const importData = async () => {

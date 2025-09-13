@@ -16,6 +16,12 @@ const artists = [
     image: "/images/thebeatles.jpg",
     link: "/tour/thebeatles",
   },
+  {
+    name: "Radiohead",
+    description: "Le groupe Le groupe d'Oxford qui a redéfini le rock moderne.",
+    image: "/images/radiohead.webp",
+    link: "/tour/radiohead",
+  },
 ];
 
 export default function HomePage() {
